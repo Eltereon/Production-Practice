@@ -5,6 +5,9 @@ namespace Iterative
 {
     class Program
     {
+        тестирование гита - +++++++++++++++++++++++++++++++++
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // СЧИТЫВАНИЕ ДАННЫХ
