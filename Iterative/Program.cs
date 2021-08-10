@@ -7,7 +7,7 @@ namespace Iterative_method_for_sequential_decision_processes
 
     {
       
-        static List<double> GaussianEllimination(double[,] coefficients, int countEq)
+        static List<double> GaussianElimination(double[,] coefficients, int countEq)
         {
             int row = countEq;
             double d, s;
