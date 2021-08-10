@@ -162,7 +162,7 @@ namespace Iterative_method_for_sequential_decision_processes
                 coefficients[1, 0] = 1;
                 coefficients[1, 1] = -pq[0].GetP()[0];
                 coefficients[1, 2] = pq[0].GetP()[0];
-                List<double> gausAns = GaussianEllimination(coefficients, coefficients.GetLength(0));
+                List<double> gausAns = GaussianElimination(coefficients, coefficients.GetLength(0));
                 double g = gausAns[0];
                 double v1 = gausAns[1];
                 double v2 = 0;
