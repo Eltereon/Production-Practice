@@ -1,3 +1,7 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 import base64
 import imageio
 import IPython
@@ -39,19 +43,18 @@ class MyEnvironment(py_environment.PyEnvironment):
 
   def _reset(self):
     self._state = 0
+    self._count_steps = 0
     self._episode_ended = False
     return ts.restart(np.array([self._state], dtype=np.int32))
   
   def _step(self, action):
-
     self._count_steps += 1
 
     if self._episode_ended:
       # The last action ended the episode. Ignore the current action and start
       # a new episode.
       return self.reset()
-
-    if self._count_steps == 30:
+    if self._count_steps == 29:
       self._episode_ended = True
     else:
 
@@ -74,7 +77,7 @@ class MyEnvironment(py_environment.PyEnvironment):
       
 tf.compat.v1.enable_v2_behavior()
 
-num_iterations = 250 
+num_iterations = 2000 
 collect_episodes_per_iteration = 2 
 replay_buffer_capacity = 2000
 
